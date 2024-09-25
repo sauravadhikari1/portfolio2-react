@@ -1,4 +1,5 @@
 import "./App.css";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
@@ -7,6 +8,7 @@ import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Project } from "./components/Project";
 import { Skill } from "./components/Skill";
+
 
 function App() {
   return (
@@ -22,21 +24,30 @@ function App() {
         <Navbar />
 
         {/* <!-- hero section  --> */}
-        <Hero />
+        {/* <Hero /> */}
 
         {/* <!-- skills section  --> */}
-        <Skill />
+        {/* <Skill /> */}
 
         {/* <!-- project section  --> */}
-        <Project />
+        {/* <Project /> */}
 
         {/* <!-- about me section  --> */}
-        <About />
+        {/* <About /> */}
 
         {/* <!-- Contact section  --> */}
-        <Contact />
+        {/* <Contact /> */}
 
         {/* <!-- Footer section  --> */}
+        <Routes>
+          <Route path="/" element ={<Hero />} />
+          <Route path="skills" element ={<Skill />} />
+          <Route path="projects" element ={<Project />} />
+          <Route path="about" element ={<About/>} />
+          <Route path="contact" element ={<Contact />} />
+
+        </Routes>
+
         <Footer />
       </div>
     </>
