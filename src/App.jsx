@@ -8,6 +8,7 @@ import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Project } from "./components/Project";
 import { Skill } from "./components/Skill";
+import Layout from "./components/layout";
 
 
 function App() {
@@ -15,13 +16,6 @@ function App() {
     <>
       {/* <!-- dar mode toggler --> */}
 
-      <input type="checkbox" id="darkMode" />
-      <div className="wrapper">
-        <label htmlFor="darkMode">
-          <i className="fa-solid fa-circle-half-stroke"></i>
-        </label>
-        {/* <!-- navbar --> */}
-        <Navbar />
 
         {/* <!-- hero section  --> */}
         {/* <Hero /> */}
@@ -40,16 +34,17 @@ function App() {
 
         {/* <!-- Footer section  --> */}
         <Routes>
+          <Route path="/" element ={<Layout />}>
+
           <Route path="/" element ={<Hero />} />
           <Route path="skills" element ={<Skill />} />
           <Route path="projects" element ={<Project />} />
           <Route path="about" element ={<About/>} />
           <Route path="contact" element ={<Contact />} />
+            </Route>
 
         </Routes>
 
-        <Footer />
-      </div>
     </>
   );
 }
